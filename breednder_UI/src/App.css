@@ -297,3 +297,124 @@ td img {
   width: 200px;
   height: 200px;
 }
+
+input[type="file"] {
+  display: none;
+}
+.cst-up {
+  border: 1px solid #ccb1c7;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+}
+
+.cst-up label {
+  padding-top: 10px;
+}
+
+.box img {
+  width: 110px;
+  height: 140px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.box {
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
+}
+.box .text {
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 5%; /* Adjust this value to move the positioned div up and down */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  width: 50%; /* Set the width of the positioned div */
+  text-shadow: 2px 2px black;
+}
+
+.modal p {
+  font-family: "Century Gothic";
+  font-size: 17px;
+}
+
+h6 {
+  color: red;
+  text-align: center;
+}
+
+/* Admin Species */
+.adminSpecies {
+  position: relative;
+  height: 650px;
+  background-color: #fff;
+}
+
+.adminSpecies input {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+}
+
+.adminSpecies .addSpecies {
+  position: relative;
+  left: 230px;
+  bottom: 33px;
+  box-shadow: 0px 0px 0px 2px #f0c49e;
+  background: linear-gradient(to bottom, #b5174c 5%, #ec7a93 100%);
+  background-color: #b5174c;
+  border-radius: 10px !important;
+  border: 1px solid #ec7a93 !important;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 16px !important;
+  padding: 5px 10px !important;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ec7a93;
+}
+
+.adminSpecies .delSpecies {
+  position: relative;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.adminSpecies table {
+  position: relative;
+  left: 20px;
+  width: 400px;
+  text-align: center;
+}
+
+/* Admin Premium */
+.adminPremium {
+  position: relative;
+  min-height: 650px;
+  background-color: #fff;
+}
+
+.adminPremium input {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+}
+
+.adminPremium .editButton {
+  position: relative;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.adminPremium table {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  width: 95%;
+  text-align: center;
+}

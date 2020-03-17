@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import "./style.css";
+import { Row, Col } from "react-bootstrap";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 
 import Login from "../components/modalLogin";
 import Register from "../components/modalRegister";
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Row, Col } from "react-bootstrap";
-
-import "font-awesome/css/font-awesome.min.css";
 
 class Landing extends Component {
   render() {

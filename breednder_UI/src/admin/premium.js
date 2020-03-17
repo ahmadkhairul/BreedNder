@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getPremium, updatePremium } from "../_actions/premium";
-import { Table, Form } from "react-bootstrap";
+import { Container, Table, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Header from "../admin/header";
 
@@ -32,7 +32,7 @@ const App = ({ premium, getPremium, updatePremium }) => {
   const status = ["Free", "Premium"];
 
   return (
-    <div>
+    <Container fluid className="adminPremium">
       <Header />
       <Form
         onSubmit={event => {
@@ -40,7 +40,7 @@ const App = ({ premium, getPremium, updatePremium }) => {
           event.preventDefault();
         }}
       >
-        <Table className="text-center">
+        <Table bordered hover>
           <thead>
             <tr>
               <th>No</th>
@@ -48,6 +48,7 @@ const App = ({ premium, getPremium, updatePremium }) => {
               <th>Phone Number</th>
               <th>Address</th>
               <th>Rek Number</th>
+              <th>Proof of Transfer</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -85,7 +86,7 @@ const App = ({ premium, getPremium, updatePremium }) => {
                   </Form.Group>
                 </td>
                 <td>
-                  <button type="submit">
+                  <button type="submit" className="editButton">
                     <i className="fa fa-edit fa-1x"></i>
                   </button>
                 </td>
@@ -94,7 +95,7 @@ const App = ({ premium, getPremium, updatePremium }) => {
           </tbody>
         </Table>
       </Form>
-    </div>
+    </Container>
   );
 };
 

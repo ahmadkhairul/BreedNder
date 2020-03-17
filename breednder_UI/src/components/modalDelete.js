@@ -1,10 +1,7 @@
 import React, { Fragment, useState } from "react";
-
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "font-awesome/css/font-awesome.min.css";
-import "./components.css";
 
 function Destroy(props) {
   const [msgShow, setMsgShow] = useState(false);
@@ -24,7 +21,7 @@ function Destroy(props) {
         </Modal.Header>
         <Modal.Body>
           <form>
-          <input type="hidden" value={props.name} />
+            <input type="hidden" value={props.name} />
             Delete this message ?
           </form>
         </Modal.Body>
@@ -37,4 +34,3 @@ function Destroy(props) {
 }
 
 export default Destroy;
- 

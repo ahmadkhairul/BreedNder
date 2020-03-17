@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { getSpecies, saveSpecies, deleteSpecies } from "../_actions/species";
+
 import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Form } from "react-bootstrap";
+
+import { getSpecies, saveSpecies, deleteSpecies } from "../_actions/species";
 import Header from "../admin/header";
 
 const App = ({ species, getSpecies, saveSpecies, deleteSpecies }) => {
@@ -13,14 +15,7 @@ const App = ({ species, getSpecies, saveSpecies, deleteSpecies }) => {
     getSpecies();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (error)
-    return (
-      <h2>
-        Authorization Not Allowed
-        <br />
-        <Link to="/">GO BACK</Link>
-      </h2>
-    );
+  if (error) return <h2>Authorization Not Allowed</h2>;
 
   if (loading)
     return (
@@ -30,26 +25,29 @@ const App = ({ species, getSpecies, saveSpecies, deleteSpecies }) => {
     );
 
   return (
-    <div>
+    <Container fluid className="adminSpecies">
       <Header />
-      <form
+      <Form
         onSubmit={event => {
           event.preventDefault();
           saveSpecies(value);
           setValue("");
         }}
       >
-        <input
-          type="text"
-          placeholder="Add New Species"
-          value={value}
-          onChange={event => {
-            setValue(event.target.value);
-          }}
-        />
-        <input type="submit" value="Add Species" />
-      </form>
-      <Table className="text-center">
+        <Form.Group>
+          <Form.Control
+            type="text"
+            value={value}
+            onChange={event => {
+              setValue(event.target.value);
+            }}
+          />
+        </Form.Group>
+        <button className="addSpecies" type="submit">
+          Add Species
+        </button>
+      </Form>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>No</th>
@@ -63,19 +61,20 @@ const App = ({ species, getSpecies, saveSpecies, deleteSpecies }) => {
               <td>{index + 1}</td>
               <td>{item.name}</td>
               <td>
-                <button
-                  onClick={() => {
-                    deleteSpecies(item.id);
-                  }}
-                >
-                  <i className="fa fa-close fa-1x"></i>
+                <button className="delSpecies">
+                  <i
+                    className="fa fa-close fa-1x"
+                    onClick={() => {
+                      deleteSpecies(item.id);
+                    }}
+                  ></i>
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </Table>
-    </div>
+    </Container>
   );
 };
 

@@ -1,14 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import { connect } from "react-redux";
-import { getSpecies } from "../_actions/species";
-
 import { Modal, Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import "./components.css";
+
+import { getSpecies } from "../_actions/species";
 
 const App = ({ species, getSpecies }) => {
   const [rgShow, setRgShow] = useState(false);

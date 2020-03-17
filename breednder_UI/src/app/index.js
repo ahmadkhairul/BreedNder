@@ -1,14 +1,12 @@
 import React, { Component, Fragment } from "react";
-import "./style.css";
+import { Link } from "react-router-dom";
+import { Row, Tabs, Tab, Card, Col } from "react-bootstrap";
 
 import Mach from "./match";
 import Chat from "./chat";
 import Deck from "../components/deck/deck";
 import Message from "../components/modalMessage";
 import Destroy from "../components/modalDelete";
-
-import { Link } from "react-router-dom";
-import { Row, Tabs, Tab, Card, Col } from "react-bootstrap";
 
 import "font-awesome/css/font-awesome.min.css";
 

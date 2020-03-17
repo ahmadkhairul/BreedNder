@@ -1,19 +1,15 @@
 import React, { Fragment, useState } from "react";
-
 import { Modal, Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import "./components.css";
 
 function Message(props) {
   const [msgShow, setMsgShow] = useState(false);
   return (
     <Fragment>
       {/*<i class="fa fa-reply fa-1x" onClick={() => setMsgShow(true)}></i>*/}
-      <div onClick={() => setMsgShow(true)}>
-        { props.container }
-      </div>
+      <div onClick={() => setMsgShow(true)}>{props.container}</div>
       <Modal
         size="sm"
         show={msgShow}

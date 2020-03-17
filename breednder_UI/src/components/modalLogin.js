@@ -1,14 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { Redirect } from "react-router-dom";
-
 import { connect } from "react-redux";
-import { postLogin } from "../_actions/login";
-
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "font-awesome/css/font-awesome.min.css";
-import "./components.css";
+
+import { postLogin } from "../_actions/login";
 
 const App = ({ login, postLogin }) => {
   const [emailValue, emailSetValue] = useState("");

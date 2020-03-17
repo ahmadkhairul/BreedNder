@@ -13,7 +13,7 @@ import PetAdd from "./components/petAdd";
 import AdminSpecies from "./admin/species";
 import AdminPremium from "./admin/premium";
 
-import "./index.css";
+import "./App.css";
 
 import * as serviceWorker from "./serviceWorker";
 
