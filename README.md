@@ -42,7 +42,7 @@ Then, install all the packages that described in `package.json` of both `breednd
 npm install
 ```
 
-### Server Setup
+### Setup
 
 For the server setup, first, make sure your MySQL services is running fine. In `server` directory, you'll find `config.json` inside `config` folder. Open and edit the `development` configuration to match your database setup.
 
@@ -57,15 +57,7 @@ For the server setup, first, make sure your MySQL services is running fine. In `
   },
 ```
 
-After completing the database configuration setup, migrate all the required tables.
-
-```
-npm run build
-```
-
-For the `SECRET_KEY` you can custom it as you wish. But, for `BASE_URL` make sure it is matched to your local network Internet Protocol.
-
-And for the last step, running the server
+### Run the server
 
 ```
 npm start
@@ -73,9 +65,7 @@ npm start
 
 ## Screenshots
 
-### Admin
-
-<img src="screenshots/admin.png" />
+<img src="screenshots/screenshots.png" />
 
 ## Built With
 
