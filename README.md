@@ -73,7 +73,7 @@ npm start
 
 ## Screenshots
 
-<img src="docs/screenshots/screenshots.png" />
+<img src="docs/screenshots/admin.png" />
 
 ## Built With
 
@@ -83,4 +83,4 @@ npm start
 
 ## Author
 
-**Ahmad Khairul Anwar** - [exneval](https://github.com/ahmadkhairul)
+**Ahmad Khairul Anwar** - [Ahmad Khairul](https://github.com/ahmadkhairul)
