@@ -1,0 +1,299 @@
+body {
+  background-image: url("/bg-profile.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.row {
+  width: 100%;
+}
+
+.pd-top {
+  padding-top: 50px;
+}
+/* messenger */
+.messenger .card {
+  height: 100px;
+}
+
+.messenger img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.messenger h4 {
+  font-family: "Century Gothic";
+  font-weight: 700;
+  color: #b5174c;
+}
+
+.messenger .col-md-9 {
+  font-family: "Century Gothic";
+}
+
+/* modal login, register, premi */
+
+.modal-title {
+  padding-left: 0px;
+  font-family: "Century Gothic";
+  font-weight: 700;
+  color: #b5174c;
+}
+/* Navigation in index */
+.nav {
+  padding: 0px 0px 15px;
+}
+
+.nav-item {
+  font-family: "Century Gothic";
+  font-size: 17px;
+  font-weight: 700;
+  border: 0px !important;
+}
+
+.tab-content {
+  height: 580px;
+  overflow-y: auto;
+}
+
+/* Card Style */
+.card {
+  height: 800px;
+}
+
+.card-header {
+  background-color: #ff66b3 !important;
+  align-items: center;
+  justify-content: center;
+  font-family: "Century Gothic";
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 2px 2px #7c4fa8;
+}
+
+.card-header .avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.card-header .sm {
+  width: 40px;
+  height: 40px;
+}
+
+.card-body {
+  overflow-y: auto;
+}
+
+/* Scroll Style */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+.boxes {
+  padding-top: 10px;
+  position: relative;
+  display: inline-block; /* Make the width of box same as image */
+}
+.boxes .text {
+  position: absolute;
+  text-align: center;
+  top: 80%; /* Adjust this value to move the positioned div up and down */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  width: 70%; /* Set the width of the positioned div */
+  text-shadow: 2px 2px black;
+}
+
+.boxes img {
+  width: 110px;
+  height: 150px;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.carousel-item img {
+  width: 420px;
+  height: 380px;
+}
+
+.form-group,
+.card-body p,
+b {
+  font-family: "Century Gothic";
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.card-body h3 {
+  padding-left: 0px;
+  font-family: "Century Gothic";
+  font-size: 30px;
+  color: #e8bcd6;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  text-shadow: 2px 2px #7c4fa8;
+}
+
+/* All Button */
+
+.btn {
+  box-shadow: 0px 0px 0px 2px #f0c49e;
+  background: linear-gradient(to bottom, #b5174c 5%, #ec7a93 100%);
+  background-color: #b5174c;
+  border-radius: 10px !important;
+  border: 1px solid #ec7a93 !important;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 19px !important;
+  padding: 5px 20px !important;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ec7a93;
+}
+.btn :hover {
+  background: linear-gradient(to bottom, #ec7a93 5%, #b5174c 100%);
+  background-color: #ec7a93;
+}
+.btn :active {
+  position: relative;
+  top: 1px;
+}
+
+/* Style For Landing Page */
+
+.landing {
+  background-image: url("/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.landing h3 {
+  font-family: sans-serif;
+  font-size: 30px;
+  color: #ff38cd;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  text-shadow: 2px 2px #7c4fa8;
+  padding-bottom: 60px;
+}
+
+.landing p {
+  font-family: "Century Gothic";
+  font-size: 50px;
+  color: #7c4fa8;
+  font-weight: 700;
+  text-shadow: 2px 2px #ff38cd;
+}
+
+.landing i {
+  padding-top: 10px;
+  font-family: "Century Gothic";
+  font-size: 20px;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.landing .footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  padding: 10px;
+  font-family: "tahoma";
+  font-size: 30px;
+  color: white;
+  background-color: #b5174c;
+  font-style: italic;
+}
+
+/* Button For Swipe */
+.nav-margin {
+  margin: 600px 0px 0px 0px;
+}
+
+.nav-margin span {
+  margin: 0px 0px 25px 0px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-margin span b {
+  padding-right: 40px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.nav-margin .down button {
+  margin-right: 50px;
+  opacity: 0.5;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid #97a899;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 2px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+.nav-margin .down button:hover {
+  background-color: #a7b3a1;
+}
+.nav-margin .down button:active {
+  position: relative;
+  top: 1px;
+}
+
+.nav-margin .up button {
+  margin-left: 10px;
+  opacity: 0.9;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #97a899;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 10px 10px;
+}
+.nav-margin .up button:hover {
+  background-color: #a7b3a1;
+}
+
+.nav-margin .up button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Tabel Image */
+td img {
+  width: 200px;
+  height: 200px;
+}
