@@ -73,7 +73,9 @@ npm start
 
 ## Screenshots
 
-<img src="docs/screenshots/admin.png" />
+### Admin
+
+<img src="screenshots/admin.png" />
 
 ## Built With
 
