@@ -1,4 +1,4 @@
-import { POST_LOGIN } from "../config/constants";
+import { GET_PET } from "../config/constants";
 
 const initialState = {
   data: [],
@@ -8,21 +8,20 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case `${POST_LOGIN}_PENDING`:
+    case `${GET_PET}_PENDING`:
       return {
         ...state,
         loading: true
       };
-    case `${POST_LOGIN}_FULFILLED`:
+    case `${GET_PET}_FULFILLED`:
       return {
         ...state,
         data: action.payload,
         loading: false
       };
-    case `${POST_LOGIN}_REJECTED`:
+    case `${GET_PET}_REJECTED`:
       return {
         ...state,
-        data: action.payload,
         loading: false,
         error: true
       };

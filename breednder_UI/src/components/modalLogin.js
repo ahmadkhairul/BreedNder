@@ -1,17 +1,14 @@
 import React, { Fragment, useState } from "react";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Modal, Button, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
 
-import { postLogin } from "../_actions/login";
+import { postLogin } from "../_actions/auth";
 
 const App = ({ login, postLogin }) => {
-  const [emailValue, emailSetValue] = useState("");
-  const [passwordValue, passwordSetValue] = useState("");
-  const { data, loading, error } = login;
   const [lgShow, setLgShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { loading, error } = login;
 
   return (
     <Fragment>
@@ -27,24 +24,22 @@ const App = ({ login, postLogin }) => {
             <span>Login</span>
           </Modal.Title>
         </Modal.Header>
-
         <Modal.Body>
-          {error === true ? <h6>Email or Password Wrong</h6> : <></>}
+          {error === true ? <h6>Username or Password Wrong</h6> : <></>}
           {loading === true ? <h6>Now Loading</h6> : <></>}
-          {data.token != null ? <>{<Redirect to="/"></Redirect>}</> : <></>}
           <Form
             onSubmit={event => {
-              postLogin({ emailValue, passwordValue });
               event.preventDefault();
+              postLogin({ email, password });
             }}
           >
             <Form.Group>
               <Form.Control
                 type="email"
                 placeholder="Email"
-                value={emailValue}
+                value={email}
                 onChange={event => {
-                  emailSetValue(event.target.value);
+                  setEmail(event.target.value);
                 }}
                 required
               />
@@ -53,9 +48,9 @@ const App = ({ login, postLogin }) => {
               <Form.Control
                 type="password"
                 placeholder="Password"
-                value={passwordValue}
+                value={password}
                 onChange={event => {
-                  passwordSetValue(event.target.value);
+                  setPassword(event.target.value);
                 }}
                 required
               />
@@ -72,13 +67,13 @@ const App = ({ login, postLogin }) => {
 // export default Login;
 const mapStateToProps = state => {
   return {
-    login: state.login
+    login: state.auth
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    postLogin: user => dispatch(postLogin(user))
+    postLogin: value => dispatch(postLogin(value))
   };
 };
 

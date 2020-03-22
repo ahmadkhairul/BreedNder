@@ -70,7 +70,6 @@ body {
   font-size: 30px;
   color: #ffffff;
   font-weight: 700;
-  text-shadow: 2px 2px #7c4fa8;
 }
 
 .card-header .avatar {
@@ -83,6 +82,17 @@ body {
 .card-header .sm {
   width: 40px;
   height: 40px;
+}
+
+.card-header select {
+  background-color: #ff66b3 !important;
+  align-items: center;
+  justify-content: center;
+  font-family: "Century Gothic";
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
 }
 
 .card-body {

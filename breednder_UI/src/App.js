@@ -1,6 +1,12 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
+import { connect } from "react-redux";
 
 import Landing from "./app/landing";
 import Index from "./app/index";
@@ -13,85 +19,125 @@ import PetAdd from "./components/petAdd";
 import AdminSpecies from "./admin/species";
 import AdminPremium from "./admin/premium";
 
+import { authUser } from "./_actions/auth";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 import "./App.css";
 
-import * as serviceWorker from "./serviceWorker";
+const App = ({ auth, authUser }) => {
+  const { isLogin, data, loading } = auth;
 
-class App extends Component {
-  render() {
+  useEffect(() => {
+    authUser();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (loading)
     return (
-      <Router>
-        <div className="App-link">
-          <Switch>
-            <Route path="/PetProfile">
-              <Container fluid>
-                <Row className="bg-app">
-                  <Profile />
-                  <PetProfile />
-                  <Profile2 />
-                </Row>
-              </Container>
-            </Route>
-
-            <Route path="/PetEdit">
-              <Container fluid>
-                <Row className="bg-app">
-                  <Profile />
-                  <PetEdit />
-                  <Profile2 />
-                </Row>
-              </Container>
-            </Route>
-
-            <Route path="/PetAdd">
-              <Container fluid>
-                <Row className="bg-app">
-                  <Profile />
-                  <PetAdd />
-                  <Profile2 />
-                </Row>
-              </Container>
-            </Route>
-
-            <Route path="/Landing">
-              <Landing />
-            </Route>
-
-            <Route path="/AdminSpecies">
-              <AdminSpecies />
-            </Route>
-
-            <Route path="/AdminPremium">
-              <AdminPremium />
-            </Route>
-
-            <Route path="/PetAdd">
-              <Container fluid>
-                <Row className="bg-app">
-                  <Profile />
-                  <PetAdd />
-                  <Profile2 />
-                </Row>
-              </Container>
-            </Route>
-
-            <Route path="/">
-              <Container fluid>
-                <Row className="bg-app">
-                  <Index />
-                </Row>
-              </Container>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <>
+        <img src="/loading.gif" />
+      </>
     );
-  }
-}
 
-export default App;
+  const UserRoute = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={props =>
+        isLogin === true && data.level === "User" ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/landing" />
+        )
+      }
+    />
+  );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  const AdminRoute = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={props =>
+        isLogin === true && data.level === "Admin" ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/landing" />
+        )
+      }
+    />
+  );
+
+  const PetProfileLink = () => {
+    return (
+      <Container fluid>
+        <Row className="bg-app">
+          <Profile />
+          <PetProfile />
+          <Profile2 />
+        </Row>
+      </Container>
+    );
+  };
+
+  const PetEditLink = () => {
+    return (
+      <Container fluid>
+        <Row className="bg-app">
+          <Profile />
+          <PetEdit />
+          <Profile2 />
+        </Row>
+      </Container>
+    );
+  };
+
+  const PetAddLink = () => {
+    return (
+      <Container fluid>
+        <Row className="bg-app">
+          <Profile />
+          <PetAdd />
+          <Profile2 />
+        </Row>
+      </Container>
+    );
+  };
+
+  const IndexLink = () => {
+    return (
+      <Container fluid>
+        <Row className="bg-app">
+          <Index />
+        </Row>
+      </Container>
+    );
+  };
+
+  return (
+    <Router>
+      <Switch>
+        <UserRoute path="/PetProfile" component={PetProfileLink} />
+        <UserRoute path="/PetEdit" component={PetEditLink} />
+        <UserRoute path="/PetAdd" component={PetAddLink} />
+        <AdminRoute path="/AdminSpecies" component={AdminSpecies} />
+        <AdminRoute path="/AdminPremium" component={AdminPremium} />
+        <Route path="/Landing">
+          <Landing />
+        </Route>
+        <UserRoute path="/" component={IndexLink} />
+      </Switch>
+    </Router>
+  );
+};
+
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    authUser: () => dispatch(authUser())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

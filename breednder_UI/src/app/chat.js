@@ -1,6 +1,6 @@
 export default [
   {
-    pics: "/1.jpg",
+    pics: "/profile.png",
     name: "George",
     message: "Charles akan menyukai sibleck"
   }

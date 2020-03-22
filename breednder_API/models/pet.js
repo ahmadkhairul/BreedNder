@@ -24,6 +24,16 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "species_id",
       as: "species"
     });
+
+    pet.hasMany(models.match, {
+      foreignKey: "pet_liked_id",
+      as: "match_liked"
+    });
+
+    pet.hasMany(models.match, {
+      foreignKey: "pet_id",
+      as: "match"
+    });
   };
   return pet;
 };
